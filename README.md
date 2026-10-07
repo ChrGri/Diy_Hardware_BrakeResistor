@@ -20,9 +20,25 @@ This circuit clamps the voltage purely in hardware:
 
 The circuit works entirely on its own. **No connection to the ESP32** is needed.
 
+---
+
+## Measurements
+
+### Single hard brake stroke
+
+![Scope of a single hard brake stroke](images/BrakeScope.png)
+
+*Live plot from the FFB Pedal Dashboard: one hard brake stroke with the hardware brake resistor installed.*
+
+- **ESP Command Velocity** (orange) stays at the maximum of **250 000 Hz** until the pedal reaches the endstop. The pedal does not have to slow down to protect the supply rail.
+- **Servo Voltage** (yellow) rises from 34.7 V at rest and **never exceeds 44 V** (peak 44.1 V).
+- The force reaches about 55 kg, and the pedal travels to the endstop in about 69 ms.
+
+### Repeated fast pedal movements
+
 ![Servo voltage (yellow) during fast pedal movements](images/voltage_plot.png)
 
-*Live plot from the FFB Pedal Dashboard: servo voltage (yellow) during fast, hard pedal movements. The voltage ranges between approx. 34.8 V and 44.3 V.*
+*Servo voltage (yellow) during repeated fast, hard pedal movements. The voltage stays between approx. 34.8 V and 44.3 V.*
 
 ---
 
