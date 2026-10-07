@@ -4,6 +4,8 @@ A standalone hardware brake resistor for the [DIY Sim Racing FFB Pedal](https://
 
 ![Brake resistor module installed between the pedals](images/installed_on_pedal.jpg)
 
+*The module was placed between the pedals for testing only. It can be mounted much more neatly underneath the rig.*
+
 ---
 
 ## Why?
