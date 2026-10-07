@@ -49,7 +49,7 @@ With the brake resistor module, the power supply on the pedal PCB is **no longer
 
 **PSU → (SR5100) → brake resistor module (DC IN + / −) → directly to the servos**
 
-The **DC IN** terminals of the MOSFET board serve as the distribution point: the supply lead from the power supply and the supply wires of all servos go into the same **DC IN +** and **DC IN −** terminals (see the photo in [step 9](#9️⃣-housing-optional)).
+The **DC IN** terminals of the MOSFET board serve as the distribution point: the supply lead from the power supply and the supply wires of all servos go into the same **DC IN +** and **DC IN −** terminals (see the photo in step 9 of the [Build Guide](#️-build-guide)).
 
 ---
 
