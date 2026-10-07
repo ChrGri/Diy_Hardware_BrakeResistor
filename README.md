@@ -2,7 +2,7 @@
 
 A standalone hardware brake resistor for the [DIY Sim Racing FFB Pedal](https://github.com/ChrGri/DIY-Sim-Racing-FFB-Pedal), built from a cheap 3D-printer heated-bed MOSFET board, a 50 W power resistor and a few small parts. **Parts cost: roughly 10 €.**
 
-![Housing with MOSFET board and brake resistor](images/housing_render.png)
+![Brake resistor module installed between the pedals](images/installed_on_pedal.jpg)
 
 ---
 
@@ -19,6 +19,14 @@ This circuit clamps the voltage purely in hardware:
 5. The **10 kΩ resistor** sits in parallel with the board input. It drains the small leakage current of the zener diode below the threshold, so the MOSFET doesn't partially turn on too early.
 
 The circuit works entirely on its own. **No connection to the ESP32** is needed.
+
+### Power wiring: the pedal PCB is no longer in the servo supply path
+
+With the brake resistor module, the power supply on the pedal PCB is **no longer needed**. Instead, the wiring goes:
+
+**PSU → (SR5100) → brake resistor module (DC IN + / −) → directly to the servos**
+
+The **DC IN** terminals of the MOSFET board serve as the distribution point: the supply lead from the power supply and the supply wires of all servos go into the same **DC IN +** and **DC IN −** terminals (see the photo in [step 9](#9-housing-optional)).
 
 ---
 
@@ -71,15 +79,15 @@ Optional: 3D-printed housing, see [3d_print/HardwareBrakeResistorHousing_V1.3mf]
 
 ```
                   SR5100
- PSU +V ───────────►|──────┬──────────────────────────► Servos +V
-                (band to   │
-                 servos)   ├── DC IN +  (MOSFET board)
-                           │      │
-                           │      └──|◄── Zener 39 V ──┬──► JST input +
-                           │      (band to DC IN +)    │
-                           │                         10 kΩ
-                           │                           │
- PSU −V ───────────────────┴── DC IN −  ── short wire ─┴──► JST input −
+ PSU +V ───────────►|────────► DC IN + (MOSFET board) ─────────► Servos +V
+                (band to          │
+                 module)          └──|◄── Zener 39 V ──┬──► JST input +
+                                  (band to DC IN +)    │
+                                                     10 kΩ
+                                                       │
+ PSU −V ─────────────────────► DC IN − ── short wire ──┴──► JST input −
+                                  │
+                                  └────────────────────────────► Servos −V
 
  HOT BED + / − ── 8 Ω / 50 W resistor
 ```
@@ -87,7 +95,8 @@ Optional: 3D-printed housing, see [3d_print/HardwareBrakeResistorHousing_V1.3mf]
 - **Zener diode:** cathode (band) to **DC IN +**, anode to the **+ pin** of the board input.
 - **10 kΩ:** across the two pins of the board input.
 - **Short wire:** from the **− pin** of the board input to **DC IN −**.
-- **SR5100:** anode to the power supply **+V**, cathode (band) towards the servos and the MOSFET board.
+- **SR5100:** anode to the power supply **+V**, cathode (band) towards the MOSFET board.
+- **Servos:** supply wires directly into **DC IN +** and **DC IN −** of the MOSFET board.
 - **8 Ω / 50 W:** to the two **HOT BED** terminals. Polarity doesn't matter.
 
 > The polarity of the board input is marked on the PCB. If it is reversed, nothing happens (the optocoupler simply stays off). In that case, connect the plug the other way around.
@@ -106,9 +115,11 @@ MOSFET board, JST housing with two crimp contacts, 39 V zener diode (red, glass)
 
 Crimp the anode of the zener diode (the side **without** the band) and the short wire into one crimp contact each. Place the 10 kΩ resistor between the two contacts so that it bridges both pins.
 
-Without a crimping tool: skip this step and solder the parts directly to the input pins from below in step 4.
-
 ![Zener diode, 10k and wire crimped](images/dsc00307.jpg)
+
+**Without a crimping tool (optional):** skip steps 2 and 3 and solder the parts directly to the input pins on the underside of the board. Put some insulating tape on the board underneath the parts so the leads can't touch the other solder joints:
+
+![Soldered variant on the underside of the board](images/soldered_variant.jpg)
 
 ### 3. Insert into the JST housing
 
@@ -144,7 +155,7 @@ Insulate the solder joint with heat shrink so that only the anode leg sticks out
 
 ### 7. Connect to the power supply
 
-Screw the anode leg of the SR5100 into the **+V** terminal of the power supply and connect ground to **−V**. The MOSFET board (DC IN + / −) is connected on the **servo side** of the diode.
+Screw the anode leg of the SR5100 into the **+V** terminal of the power supply and connect ground to **−V**. The other ends of both wires go to **DC IN +** and **DC IN −** of the MOSFET board.
 
 ![Connected to the power supply](images/dsc00313.jpg)
 
@@ -163,6 +174,12 @@ In this mode the firmware:
 ### 9. Housing (optional)
 
 Mount the board and the resistor in the 3D-printed housing: [3d_print/HardwareBrakeResistorHousing_V1.3mf](3d_print/HardwareBrakeResistorHousing_V1.3mf). The aluminium resistor gets hot. Leave some air in the housing and don't screw it directly onto thin PLA.
+
+![Housing render](images/housing_render.png)
+
+Then wire the servos directly to the module: their supply wires go into **DC IN +** (red) and **DC IN −** (black), together with the supply lead from the power supply. The servo supply no longer passes through the pedal PCB.
+
+![Parts in the housing, servo supply wires in DC IN + / −](images/housing_assembled.jpg)
 
 ---
 
