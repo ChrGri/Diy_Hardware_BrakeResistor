@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="920" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#222">Wiring: PSU → SR5100 → MOSFET board → Servos</text>
+
+  <g transform="translate(0,50)">
+
+    <!-- ================= POWER SUPPLY ================= -->
+    <rect x="40" y="390" width="230" height="300" rx="6" fill="#d9dde1" stroke="#555" stroke-width="2"/>
+    <text x="52" y="424" font-size="13" font-weight="700" fill="#222">Mean Well LRS-350-36</text>
+    <text x="52" y="443" font-size="12" fill="#333">36 V DC power supply</text>
+    <circle cx="120" cy="560" r="48" fill="#c4c9ce" stroke="#555" stroke-width="2"/>
+    <circle cx="120" cy="560" r="32" fill="none" stroke="#777" stroke-width="2"/>
+    <circle cx="120" cy="560" r="16" fill="none" stroke="#777" stroke-width="2"/>
+    <text x="120" y="630" text-anchor="middle" font-size="11" fill="#555">set ≤ 37 V</text>
+
+    <!-- terminal strip -->
+    <rect x="225" y="405" width="45" height="270" fill="#222" rx="3"/>
+    <g font-size="12" font-weight="700" text-anchor="end" fill="#222">
+      <text x="219" y="424">+V</text><text x="219" y="454">+V</text><text x="219" y="484">+V</text>
+      <text x="219" y="514">−V</text><text x="219" y="544">−V</text><text x="219" y="574">−V</text>
+      <text x="219" y="604">⏚</text><text x="219" y="634">N</text><text x="219" y="664">L</text>
+    </g>
+    <g fill="#b8b8b8" stroke="#666">
+      <circle cx="248" cy="420" r="9"/><circle cx="248" cy="450" r="9"/><circle cx="248" cy="480" r="9"/>
+      <circle cx="248" cy="510" r="9"/><circle cx="248" cy="540" r="9"/><circle cx="248" cy="570" r="9"/>
+      <circle cx="248" cy="600" r="9"/><circle cx="248" cy="630" r="9"/><circle cx="248" cy="660" r="9"/>
+    </g>
+
+    <!-- mains -->
+    <line x1="248" y1="600" x2="330" y2="600" stroke="#2e9e3e" stroke-width="3"/>
+    <line x1="248" y1="600" x2="330" y2="600" stroke="#e8c800" stroke-width="3" stroke-dasharray="8 8"/>
+    <line x1="248" y1="630" x2="330" y2="630" stroke="#1f5fbf" stroke-width="3"/>
+    <line x1="248" y1="660" x2="330" y2="660" stroke="#7a4a22" stroke-width="3"/>
+    <text x="340" y="625" font-size="13" fill="#333">230 V AC mains</text>
+    <text x="340" y="642" font-size="11" fill="#777">(L / N / PE)</text>
+
+    <!-- ================= MOSFET BOARD ================= -->
+    <rect x="470" y="70" width="320" height="270" rx="8" fill="#5b6168" stroke="#3b4046" stroke-width="2"/>
+    <text x="486" y="95" font-size="13" font-weight="700" fill="#fff">MOSFET board</text>
+    <text x="486" y="111" font-size="11" fill="#dde1e5">(3D-printer heated bed)</text>
+
+    <!-- heatsink + MOSFET -->
+    <g fill="#2a2a2a">
+      <rect x="640" y="85" width="12" height="85"/><rect x="660" y="85" width="12" height="85"/>
+      <rect x="680" y="85" width="12" height="85"/><rect x="700" y="85" width="12" height="85"/>
+      <rect x="720" y="85" width="12" height="85"/><rect x="740" y="85" width="12" height="85"/>
+      <rect x="760" y="85" width="12" height="85"/>
+      <rect x="635" y="165" width="142" height="10"/>
+    </g>
+    <rect x="672" y="176" width="70" height="26" fill="#111"/>
+    <text x="707" y="194" text-anchor="middle" font-size="11" fill="#ddd">MOSFET</text>
+
+    <!-- input header (JST, vertical) -->
+    <rect x="500" y="122" width="36" height="76" rx="3" fill="#f2f2f2" stroke="#999"/>
+    <circle cx="518" cy="140" r="5" fill="#c9a227"/>
+    <circle cx="518" cy="180" r="5" fill="#c9a227"/>
+    <text x="546" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="#ff8a80">+</text>
+    <text x="546" y="198" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">−</text>
+
+    <!-- 10k across input -->
+    <polyline points="518,140 560,140 560,146" fill="none" stroke="#9aa" stroke-width="2.5"/>
+    <polyline points="560,174 560,180 518,180" fill="none" stroke="#9aa" stroke-width="2.5"/>
+    <rect x="553" y="146" width="14" height="28" rx="5" fill="#4a7fd4" stroke="#2a4f94"/>
+    <text x="574" y="164" font-size="11" font-weight="700" fill="#fff">10 kΩ</text>
+
+    <!-- jumper wire: input − to DC IN − -->
+    <polyline points="518,180 518,225 725,225 725,318" fill="none" stroke="#e0b000" stroke-width="3.5" stroke-linejoin="round"/>
+    <text x="600" y="219" font-size="11" fill="#ffe680">jumper wire</text>
+
+    <!-- zener: input + to DC IN +  (cathode/band towards DC IN +) -->
+    <polyline points="518,140 484,140 484,265 572,265" fill="none" stroke="#9aa" stroke-width="2.5"/>
+    <polyline points="598,265 660,265 660,318" fill="none" stroke="#9aa" stroke-width="2.5" stroke-linejoin="round"/>
+    <polygon points="572,255 572,275 594,265" fill="#e05050" stroke="#7a1010"/>
+    <polyline points="590,253 594,255 594,275 598,277" fill="none" stroke="#111" stroke-width="3"/>
+    <text x="560" y="252" font-size="11" font-weight="700" fill="#fff">Zener 39 V</text>
+
+    <!-- screw terminals -->
+    <text x="542" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">HOT BED</text>
+    <text x="692" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">DC IN</text>
+    <g>
+      <rect x="485" y="310" width="50" height="50" fill="#3a6fd0" stroke="#1d3f80"/>
+      <rect x="550" y="310" width="50" height="50" fill="#3a6fd0" stroke="#1d3f80"/>
+      <rect x="635" y="310" width="50" height="50" fill="#3a6fd0" stroke="#1d3f80"/>
+      <rect x="700" y="310" width="50" height="50" fill="#3a6fd0" stroke="#1d3f80"/>
+    </g>
+    <g fill="#d4b030" stroke="#7a6010">
+      <circle cx="510" cy="330" r="11"/><circle cx="575" cy="330" r="11"/>
+      <circle cx="660" cy="330" r="11"/><circle cx="725" cy="330" r="11"/>
+    </g>
+    <text x="660" y="355" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">+</text>
+    <text x="725" y="355" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">−</text>
+
+    <!-- ================= BRAKE RESISTOR ================= -->
+    <line x1="510" y1="360" x2="510" y2="395" stroke="#666" stroke-width="3.5"/>
+    <line x1="575" y1="360" x2="575" y2="395" stroke="#666" stroke-width="3.5"/>
+    <rect x="478" y="395" width="129" height="42" rx="4" fill="#c8ccd0" stroke="#666" stroke-width="2"/>
+    <g stroke="#a0a5aa" stroke-width="2">
+      <line x1="488" y1="399" x2="488" y2="433"/><line x1="597" y1="399" x2="597" y2="433"/>
+    </g>
+    <text x="542" y="421" text-anchor="middle" font-size="13" font-weight="700" fill="#222">8 Ω / 50 W</text>
+    <text x="542" y="455" text-anchor="middle" font-size="11" fill="#555">brake resistor (polarity irrelevant)</text>
+
+    <!-- ================= PSU → MODULE ================= -->
+    <!-- + with SR5100 -->
+    <polyline points="248,480 365,480" fill="none" stroke="#d32f2f" stroke-width="4"/>
+    <polyline points="395,480 660,480 660,360" fill="none" stroke="#d32f2f" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="365,468 365,492 390,480" fill="#333"/>
+    <line x1="391" y1="467" x2="391" y2="493" stroke="#333" stroke-width="4"/>
+    <text x="380" y="458" text-anchor="middle" font-size="13" font-weight="700" fill="#222">SR5100</text>
+    <text x="380" y="472" text-anchor="middle" font-size="10" fill="#666" dy="-30">band → module</text>
+    <!-- − -->
+    <polyline points="248,510 725,510 725,360" fill="none" stroke="#222" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- ================= MODULE → SERVOS ================= -->
+    <!-- + branch, hops over the − wire -->
+    <path d="M660,385 L717,385 A8,8 0 0 1 733,385 L880,385 L880,770" fill="none" stroke="#d32f2f" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="660" cy="385" r="5.5" fill="#d32f2f"/>
+    <!-- − branch -->
+    <polyline points="725,410 850,410 850,805" fill="none" stroke="#222" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="725" cy="410" r="5.5" fill="#222"/>
+
+    <!-- servo feeds -->
+    <line x1="880" y1="490" x2="930" y2="490" stroke="#d32f2f" stroke-width="4"/>
+    <line x1="880" y1="630" x2="930" y2="630" stroke="#d32f2f" stroke-width="4"/>
+    <line x1="880" y1="770" x2="930" y2="770" stroke="#d32f2f" stroke-width="4"/>
+    <circle cx="880" cy="490" r="5.5" fill="#d32f2f"/>
+    <circle cx="880" cy="630" r="5.5" fill="#d32f2f"/>
+    <path d="M850,525 L872,525 A8,8 0 0 1 888,525 L930,525" fill="none" stroke="#222" stroke-width="4"/>
+    <path d="M850,665 L872,665 A8,8 0 0 1 888,665 L930,665" fill="none" stroke="#222" stroke-width="4"/>
+    <line x1="850" y1="805" x2="930" y2="805" stroke="#222" stroke-width="4"/>
+    <circle cx="850" cy="525" r="5.5" fill="#222"/>
+    <circle cx="850" cy="665" r="5.5" fill="#222"/>
+
+    <text x="800" y="378" text-anchor="middle" font-size="11" fill="#555">to servos</text>
+
+    <!-- ================= SERVOS ================= -->
+    <g id="servo1">
+      <rect x="930" y="450" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="497" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="475" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="494" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="529" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="497" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="517" font-size="12" fill="#bbb">Pedal 1</text>
+    </g>
+    <g>
+      <rect x="930" y="590" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="637" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="615" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="634" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="669" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="637" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="657" font-size="12" fill="#bbb">Pedal 2</text>
+    </g>
+    <g>
+      <rect x="930" y="730" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="777" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="755" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="774" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="809" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="777" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="797" font-size="12" fill="#bbb">Pedal 3</text>
+    </g>
+
+    <!-- ================= NOTES ================= -->
+    <g font-size="13" fill="#333">
+      <line x1="40" y1="732" x2="80" y2="732" stroke="#d32f2f" stroke-width="4"/>
+      <text x="90" y="737">+36 V</text>
+      <line x1="160" y1="732" x2="200" y2="732" stroke="#222" stroke-width="4"/>
+      <text x="210" y="737">GND</text>
+      <circle cx="290" cy="732" r="5.5" fill="#222"/>
+      <text x="302" y="737">= same DC IN screw terminal (PSU and servo wires clamped together)</text>
+      <text x="40" y="765">• Servo supply goes directly from the module to the servos, not through the pedal PCB.</text>
+      <text x="40" y="787">• SR5100: anode to PSU +V, cathode (band) towards the module.</text>
+      <text x="40" y="809">• Zener: cathode (band) to DC IN +, anode to input + pin. No connection to the ESP32 needed.</text>
+    </g>
+  </g>
+</svg>
