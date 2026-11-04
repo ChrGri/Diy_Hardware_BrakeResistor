@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1200" height="920" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-size="24" font-weight="700" fill="#222">Wiring: PSU → MKS brake resistor module → WAGO → Servos</text>
+
+  <g transform="translate(0,50)">
+
+    <!-- ================= POWER SUPPLY ================= -->
+    <rect x="40" y="390" width="230" height="300" rx="6" fill="#d9dde1" stroke="#555" stroke-width="2"/>
+    <text x="52" y="424" font-size="13" font-weight="700" fill="#222">Mean Well LRS-350-36</text>
+    <text x="52" y="443" font-size="12" fill="#333">36 V DC power supply</text>
+    <circle cx="120" cy="560" r="48" fill="#c4c9ce" stroke="#555" stroke-width="2"/>
+    <circle cx="120" cy="560" r="32" fill="none" stroke="#777" stroke-width="2"/>
+    <circle cx="120" cy="560" r="16" fill="none" stroke="#777" stroke-width="2"/>
+
+    <!-- terminal strip -->
+    <rect x="225" y="405" width="45" height="270" fill="#222" rx="3"/>
+    <g font-size="12" font-weight="700" text-anchor="end" fill="#222">
+      <text x="219" y="424">+V</text><text x="219" y="454">+V</text><text x="219" y="484">+V</text>
+      <text x="219" y="514">−V</text><text x="219" y="544">−V</text><text x="219" y="574">−V</text>
+      <text x="219" y="604">⏚</text><text x="219" y="634">N</text><text x="219" y="664">L</text>
+    </g>
+    <g fill="#b8b8b8" stroke="#666">
+      <circle cx="248" cy="420" r="9"/><circle cx="248" cy="450" r="9"/><circle cx="248" cy="480" r="9"/>
+      <circle cx="248" cy="510" r="9"/><circle cx="248" cy="540" r="9"/><circle cx="248" cy="570" r="9"/>
+      <circle cx="248" cy="600" r="9"/><circle cx="248" cy="630" r="9"/><circle cx="248" cy="660" r="9"/>
+    </g>
+
+    <!-- mains -->
+    <line x1="248" y1="600" x2="330" y2="600" stroke="#2e9e3e" stroke-width="3"/>
+    <line x1="248" y1="600" x2="330" y2="600" stroke="#e8c800" stroke-width="3" stroke-dasharray="8 8"/>
+    <line x1="248" y1="630" x2="330" y2="630" stroke="#1f5fbf" stroke-width="3"/>
+    <line x1="248" y1="660" x2="330" y2="660" stroke="#7a4a22" stroke-width="3"/>
+    <text x="340" y="625" font-size="13" fill="#333">230 V AC mains</text>
+    <text x="340" y="642" font-size="11" fill="#777">(L / N / PE)</text>
+
+    <!-- ================= MKS MODULE ================= -->
+    <rect x="470" y="70" width="350" height="270" rx="8" fill="#8f9ba6" stroke="#5b6168" stroke-width="2"/>
+    <rect x="560" y="95" width="170" height="92" rx="8" fill="#f2f2ec" stroke="#c9c9c0"/>
+    <rect x="574" y="108" width="18" height="18" rx="3" fill="#4caf50"/>
+    <text x="600" y="123" font-size="14" font-weight="700" fill="#4caf50">Makerbase</text>
+    <text x="645" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="#222">Brake Resistor Module V1.0</text>
+    <text x="645" y="166" text-anchor="middle" font-size="11" fill="#444">12–48 V, max. 20 A</text>
+    <text x="645" y="181" text-anchor="middle" font-size="11" fill="#444">built-in 30 Ω brake resistor</text>
+
+    <!-- hex vents -->
+    <g fill="#5b6168">
+      <polygon points="492,110 500,105 508,110 508,120 500,125 492,120"/>
+      <polygon points="512,110 520,105 528,110 528,120 520,125 512,120"/>
+      <polygon points="532,110 540,105 548,110 548,120 540,125 532,120"/>
+      <polygon points="502,128 510,123 518,128 518,138 510,143 502,138"/>
+      <polygon points="522,128 530,123 538,128 538,138 530,143 522,138"/>
+      <polygon points="752,110 760,105 768,110 768,120 760,125 752,120"/>
+      <polygon points="772,110 780,105 788,110 788,120 780,125 772,120"/>
+      <polygon points="792,110 800,105 808,110 808,120 800,125 792,120"/>
+      <polygon points="762,128 770,123 778,128 778,138 770,143 762,138"/>
+      <polygon points="782,128 790,123 798,128 798,138 790,143 782,138"/>
+    </g>
+
+    <!-- screw terminals -->
+    <text x="542" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">DC POWER INPUT</text>
+    <text x="705" y="302" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">DC POWER OUTPUT</text>
+    <g fill="#1b1b1b" stroke="#000">
+      <rect x="485" y="310" width="50" height="50"/>
+      <rect x="550" y="310" width="50" height="50"/>
+      <rect x="615" y="310" width="50" height="50"/>
+      <rect x="680" y="310" width="50" height="50"/>
+      <rect x="745" y="310" width="50" height="50"/>
+    </g>
+    <g fill="#d0d0d0" stroke="#777">
+      <circle cx="510" cy="330" r="11"/><circle cx="575" cy="330" r="11"/>
+      <circle cx="640" cy="330" r="11"/><circle cx="705" cy="330" r="11"/><circle cx="770" cy="330" r="11"/>
+    </g>
+    <g font-size="12" font-weight="700" text-anchor="middle">
+      <text x="510" y="355" fill="#ff8a80">+</text>
+      <text x="575" y="355" fill="#fff">−</text>
+      <text x="640" y="355" fill="#e0b070">R</text>
+      <text x="705" y="355" fill="#fff">−</text>
+      <text x="770" y="355" fill="#ff8a80">+</text>
+    </g>
+
+    <!-- ================= PSU → MODULE ================= -->
+    <polyline points="248,480 510,480 510,360" fill="none" stroke="#d32f2f" stroke-width="4" stroke-linejoin="round"/>
+    <polyline points="248,540 575,540 575,360" fill="none" stroke="#222" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- ================= EXTERNAL BRAKE RESISTOR (R ↔ +) ================= -->
+    <polyline points="640,360 640,425" fill="none" stroke="#d32f2f" stroke-width="2.5"/>
+    <polyline points="720,425 720,405 770,405" fill="none" stroke="#d32f2f" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="770" cy="405" r="5" fill="#d32f2f"/>
+    <rect x="590" y="425" width="140" height="42" rx="4" fill="#e3b21c" stroke="#9a7610" stroke-width="2"/>
+    <g stroke="#c49a14" stroke-width="2">
+      <line x1="600" y1="429" x2="600" y2="463"/><line x1="720" y1="429" x2="720" y2="463"/>
+    </g>
+    <text x="660" y="451" text-anchor="middle" font-size="13" font-weight="700" fill="#222">8 Ω / 50 W</text>
+    <text x="660" y="486" text-anchor="middle" font-size="11" fill="#555">external HS50 resistor</text>
+    <text x="660" y="500" text-anchor="middle" font-size="11" fill="#555">R ↔ + (polarity irrelevant)</text>
+
+    <!-- ================= MODULE → SERVOS ================= -->
+    <!-- + : OUT + → WAGO -->
+    <polyline points="770,360 770,520" fill="none" stroke="#d32f2f" stroke-width="4"/>
+
+    <!-- − : OUT − → servos, hops over the + line -->
+    <path d="M705,360 L705,385 L762,385 A8,8 0 0 1 778,385 L840,385 L840,805" fill="none" stroke="#222" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- WAGO 221-414 -->
+    <rect x="745" y="520" width="50" height="270" rx="6" fill="#eeeeee" stroke="#888" stroke-width="2"/>
+    <g fill="#f28c28" stroke="#b05f10">
+      <rect x="751" y="540" width="38" height="14" rx="3"/>
+      <rect x="751" y="600" width="38" height="14" rx="3"/>
+      <rect x="751" y="660" width="38" height="14" rx="3"/>
+      <rect x="751" y="720" width="38" height="14" rx="3"/>
+    </g>
+    <text transform="translate(735,655) rotate(-90)" text-anchor="middle" font-size="13" font-weight="700" fill="#222">WAGO 221-414</text>
+
+    <!-- + feeds from WAGO, hop over the − line -->
+    <path d="M795,560 L832,560 A8,8 0 0 1 848,560 L880,560 L880,490 L930,490" fill="none" stroke="#d32f2f" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M795,630 L832,630 A8,8 0 0 1 848,630 L930,630" fill="none" stroke="#d32f2f" stroke-width="4"/>
+    <path d="M795,700 L832,700 A8,8 0 0 1 848,700 L880,700 L880,770 L930,770" fill="none" stroke="#d32f2f" stroke-width="4" stroke-linejoin="round"/>
+
+    <!-- − feeds -->
+    <line x1="840" y1="525" x2="930" y2="525" stroke="#222" stroke-width="4"/>
+    <line x1="840" y1="665" x2="930" y2="665" stroke="#222" stroke-width="4"/>
+    <line x1="840" y1="805" x2="930" y2="805" stroke="#222" stroke-width="4"/>
+    <circle cx="840" cy="525" r="5.5" fill="#222"/>
+    <circle cx="840" cy="665" r="5.5" fill="#222"/>
+
+    <text x="880" y="378" text-anchor="middle" font-size="11" fill="#555">to servos</text>
+
+    <!-- ================= SERVOS ================= -->
+    <g>
+      <rect x="930" y="450" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="497" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="475" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="494" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="529" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="497" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="517" font-size="12" fill="#bbb">Pedal 1</text>
+    </g>
+    <g>
+      <rect x="930" y="590" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="637" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="615" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="634" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="669" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="637" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="657" font-size="12" fill="#bbb">Pedal 2</text>
+    </g>
+    <g>
+      <rect x="930" y="730" width="220" height="110" rx="6" fill="#2b2b2b"/>
+      <rect x="1150" y="777" width="26" height="16" fill="#aaa" stroke="#666"/>
+      <rect x="930" y="755" width="58" height="65" fill="#3d3d3d" stroke="#555"/>
+      <text x="944" y="774" font-size="11" font-weight="700" fill="#ff8a80">+Vdc</text>
+      <text x="944" y="809" font-size="11" font-weight="700" fill="#ddd">GND</text>
+      <text x="1003" y="777" font-size="14" font-weight="700" fill="#fff">iSV57T servo</text>
+      <text x="1003" y="797" font-size="12" fill="#bbb">Pedal 3</text>
+    </g>
+
+    <!-- ================= NOTES ================= -->
+    <g font-size="13" fill="#333">
+      <line x1="40" y1="732" x2="80" y2="732" stroke="#d32f2f" stroke-width="4"/>
+      <text x="90" y="737">+36 V</text>
+      <line x1="160" y1="732" x2="200" y2="732" stroke="#222" stroke-width="4"/>
+      <text x="210" y="737">GND</text>
+      <circle cx="290" cy="732" r="5.5" fill="#222"/>
+      <text x="302" y="737">= wires clamped together</text>
+      <text x="40" y="765">• External 8 Ω between OUT R and OUT +, in parallel with the built-in 30 Ω.</text>
+      <text x="40" y="787">• OUT + feeds the WAGO 221-414, which distributes +36 V to the servos.</text>
+      <text x="40" y="809">• Servo supply does not pass through the pedal PCB. No SR5100, no ESP32 connection.</text>
+    </g>
+  </g>
+</svg>

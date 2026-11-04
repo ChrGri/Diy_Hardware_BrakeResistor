@@ -1,0 +1,8 @@
+# SolidCraft lock and backup files
+*.sc.lock
+*.sc.bak
+# Full-size original photos (downscaled copies live in images/)
+docs/images/
+# .NET build output
+docs/tools/bin/
+docs/tools/obj/
