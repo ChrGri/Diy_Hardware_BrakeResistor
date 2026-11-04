@@ -38,9 +38,9 @@ With the lid removed: the MKS module, with the 8 Ω / 50 W resistor below it, wi
 | optional | WAGO 221-414 | 4-conductor lever connector that joins the + leads. Not needed if the leads go directly into the OUT + terminal | [Link](https://s.click.aliexpress.com/e/_c3u9xxOr) |
 | 2 | M5 × 12 cap screw | Fastens the enclosure to the 8040 profile | [Link](https://s.click.aliexpress.com/e/_c4nAhFQr) |
 | 2 | M5 T-nut | For the T-slot of the 8040 profile | [Link](https://s.click.aliexpress.com/e/_c443tord) |
-| 2 | M3 × 8 screw | Fastens the module to the tray | [Link](https://s.click.aliexpress.com/e/_c3EiD9FD) (M3 screw assortment) |
-| 2 | M3 × 6 screw | Fastens the 8 Ω resistor to the tray | [Link](https://s.click.aliexpress.com/e/_c3EiD9FD) (M3 screw assortment) |
-| 4 | M3 × 8 screw | Fastens the lid | [Link](https://s.click.aliexpress.com/e/_c3EiD9FD) (M3 screw assortment) |
+| 2 | M3 × 8 screw | Fastens the module to the tray | [Link](https://s.click.aliexpress.com/e/_c3xn0ow3) (M3 screw assortment) |
+| 2 | M3 × 6 screw | Fastens the 8 Ω resistor to the tray | [Link](https://s.click.aliexpress.com/e/_c3xn0ow3) (M3 screw assortment) |
+| 4 | M3 × 8 screw | Fastens the lid | [Link](https://s.click.aliexpress.com/e/_c3xn0ow3) (M3 screw assortment) |
 
 The M3 holes in the tray are 2.7 mm core holes, so the screws cut their own thread in the plastic. No threaded inserts are needed.
 
